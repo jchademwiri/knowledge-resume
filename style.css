@@ -1,6 +1,7 @@
 :root {
-  --primary-color: #425b84;
-  --secondary-color: #5b7bb4;
+  --primary-color: rgb(16, 58, 172);
+  --secondary-color: rgb(6, 78, 187);
+  --default-color: rgb(255, 255, 255);
   --max-width: 1100px;
 }
 
@@ -13,7 +14,7 @@
 body {
   font: normal 1rem/1.5 'Arial', sans-serif;
   background: var(--primary-color);
-  color: #fff;
+  color: var(--default-color);
   overflow-x: hidden;
   padding-bottom: 50px;
 }
@@ -47,7 +48,7 @@ h1 {
   width: 6px;
   margin: 0 auto;
   padding-top: 50px;
-  background: #fff;
+  background: var(--default-color);
 }
 
 /* Boxes */
@@ -59,16 +60,20 @@ h1 {
   padding: 1rem;
   background: var(--secondary-color);
   transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* Right side */
 #timeline ul li:nth-child(odd) div {
   left: 40px;
+  transform: translate(200px, 0);
 }
 
 /* left side */
 #timeline ul li:nth-child(even) div {
   left: -434px;
+  transform: translate(-200px, 0);
 }
 
 /* Dots */
@@ -79,7 +84,7 @@ h1 {
   bottom: 0;
   width: 25px;
   height: 25px;
-  background: var(--secondary-color);
+  background: inherit;
   transform: translateX(-50%);
   border-radius: 50%;
   transition: background 0.5s ease-in-out;
@@ -107,6 +112,17 @@ h1 {
   right: -15px;
   border-width: 8px 0 8px 16px;
   border-color: transparent transparent transparent var(--secondary-color);
+}
+
+/* Show boxes */
+#timeline ul li.show div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+#timeline ul li.show:after {
+  background: var(--secondary-color);
 }
 
 @media (max-width: 900px) {
