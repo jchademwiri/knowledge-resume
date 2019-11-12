@@ -1,6 +1,6 @@
 :root {
-  --primary-color: rgb(16, 58, 172);
-  --secondary-color: rgb(6, 78, 187);
+  --primary-color: rgb(128, 25, 110);
+  --secondary-color: rgb(189, 81, 171);
   --default-color: rgb(255, 255, 255);
   --max-width: 1100px;
 }
@@ -18,7 +18,10 @@ body {
   overflow-x: hidden;
   padding-bottom: 50px;
 }
-
+a {
+  text-decoration: none;
+  color: var(--default-color);
+}
 #main-header {
   background: var(--secondary-color);
   padding: 4rem 0;
