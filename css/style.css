@@ -157,3 +157,8 @@ h1 {
     border-color: transparent var(--secondary-color) transparent transparent;
   }
 }
+
+img {
+  border-radius: 50%;
+  height: 10rem;
+}
